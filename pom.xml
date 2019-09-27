@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>es.satec</groupId>
+	<artifactId>rundeck-ssh</artifactId>
+	<version>git-1.0.0</version>
+
+	<packaging>jar</packaging>
+
+	<name>satec-rundeck-ssh</name>
+	<description>Satec Rundeck SSH Executor</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.rundeck</groupId>
+			<artifactId>rundeck-core</artifactId>
+			<version>3.1.0-20190731</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.name}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<index>false</index>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Rundeck-Plugin-Version>1.2</Rundeck-Plugin-Version>
+							<Rundeck-Plugin-Archive>true</Rundeck-Plugin-Archive>
+							<Rundeck-Plugin-Classnames>es.satec.rundeck.steps.NodeStepSSH</Rundeck-Plugin-Classnames>
+							<Rundeck-Plugin-Libs></Rundeck-Plugin-Libs>
+							<Class-Path></Class-Path>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
