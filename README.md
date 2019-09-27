@@ -46,7 +46,7 @@ a comma-separated list of nodes.
     "ssh-authentication": "password",
     "hostname": "@hostname2",
     "username": "@username"
-  }
+  },
   "@node3": {
     "ssh-password-storage-path": "keys/@userpassword",
     "ssh-jump-hosts": "",
